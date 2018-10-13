@@ -35,3 +35,14 @@ class MultiStack:
         else:
             result = self.store[self.index3]
         return result
+
+    def pop(self, stack):
+        assert(stack >= self.stack1 and stack <= self.stack3), "Stack number not valid"
+        result = self.peek(stack)
+        if stack == self.stack1:
+            self.index1 -= 1
+        elif stack == self.stack2:
+            self.index2 -= 1
+        else:
+            self.index3 -= 1
+        return result
